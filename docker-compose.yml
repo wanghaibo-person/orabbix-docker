@@ -1,0 +1,13 @@
+version: "3"
+services:
+  
+  orabbix:
+    container_name: orabbix
+    image: zabbix-agent-oracle
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config.props:/opt/orabbix/conf/config.props
+      - ./logs:/opt/orabbix/logs
+      - ./query.props:/opt/orabbix/conf/query.props
+    network_mode: "bridge"
+    
